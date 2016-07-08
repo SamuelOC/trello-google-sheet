@@ -4,8 +4,8 @@
 
 A Google Sheets script that imports [Trello](https://trello.com/guide) data into the Google Sheet. 
 The data will be imported in 2 ways :
-1. A main sheet listing information of each card the user has access to accross all boards and lists
-2. A new sheet for each board giving a simple version of the view on Trello
+- A main sheet listing information of each card the user has access to accross all boards and lists
+- A new sheet for each board giving a simple version of the view on Trello
 
 The requirements for this script is only to get very basic data and include any stickers that is added on cards. The script is not very efficient due to making a REST call for each card in order to retrieve the sticker data.
 
@@ -30,7 +30,7 @@ See [https://developers.trello.com/](https://developers.trello.com/) for more de
 ## Authorising
 Google sheets depricated their built in OAuth 1.0 api and now only supports OAuth 2.0 ([OAuth1 docs](https://developers.google.com/identity/protocols/OAuth_ref)). As Trello only supports OAuth 1.0 we have to use a token to authorise the REST calls. The developer API key and token will have to be included in all REST calls. 
 
-You should replace the placeholder values for :
+You should replace the placeholder values for the following global variables in the script :
 - trelloKey
 - trelloToken
 - username
