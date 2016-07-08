@@ -15,11 +15,13 @@ A menu will be added with the following options :
 - **Update Current Board Sheet** : Updates the current active board sheet
 - **Clear all** : Deletes all board sheets and resets the main sheet
 
-Screenshots :
+Example of an imported Trello board :
 ![](https://samueloc.github.io/trello-google-sheet/images/trelloboard.JPG)
 
+Board sheet :
 ![](https://samueloc.github.io/trello-google-sheet/images/board_sheet.JPG)
 
+Main sheet : 
 ![](https://samueloc.github.io/trello-google-sheet/images/main_sheet.JPG)
 
 ## Trello API
