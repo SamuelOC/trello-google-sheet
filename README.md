@@ -1,4 +1,4 @@
-# Trello import Google Sheet script 
+# Google Sheet script - Import Trello data 
 
 [![WTFPL license](http://img.shields.io/badge/License-MIT-blue.svg)](http://opensource.org/licenses/MIT)
 
