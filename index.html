@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Trello-google-sheet by SamuelOC</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Trello-google-sheet</h1>
+        <p>Google sheet script to import Trello data</p>
+
+        <p class="view"><a href="https://github.com/SamuelOC/trello-google-sheet">View the Project on GitHub <small>SamuelOC/trello-google-sheet</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/SamuelOC/trello-google-sheet/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/SamuelOC/trello-google-sheet/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/SamuelOC/trello-google-sheet">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="google-sheet-script---import-trello-data" class="anchor" href="#google-sheet-script---import-trello-data" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Google Sheet script - Import Trello data</h1>
+
+<p><a href="http://opensource.org/licenses/MIT"><img src="http://img.shields.io/badge/License-MIT-blue.svg" alt="WTFPL license"></a></p>
+
+<p>A Google Sheets script that imports <a href="https://trello.com/guide">Trello</a> data into the Google Sheet. 
+The data will be imported in 2 ways :
+1. A main sheet listing information of each card the user has access to accross all boards and lists
+2. A new sheet for each board giving a simple version of the view on Trello</p>
+
+<p>The requirements for this script is only to get very basic data and include any stickers that is added on cards. The script is not very efficient due to making a REST call for each card in order to retrieve the sticker data.</p>
+
+<p>A menu will be added with the following options :</p>
+
+<ul>
+<li>
+<strong>Update Main Sheet</strong> : Updates only the main sheet</li>
+<li>
+<strong>Update All Board Sheets</strong> : Updates all the sheets (including main)</li>
+<li>
+<strong>Update Current Board Sheet</strong> : Updates the current active board sheet</li>
+<li>
+<strong>Clear all</strong> : Deletes all board sheets and resets the main sheet</li>
+</ul>
+
+<h2>
+<a id="trello-api" class="anchor" href="#trello-api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Trello API</h2>
+
+<p>See <a href="https://developers.trello.com/">https://developers.trello.com/</a> for more details on the Trello API calls</p>
+
+<h2>
+<a id="authorising" class="anchor" href="#authorising" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authorising</h2>
+
+<p>Google sheets depricated their built in OAuth 1.0 api and now only supports OAuth 2.0 (<a href="https://developers.google.com/identity/protocols/OAuth_ref">OAuth1 docs</a>). As Trello only supports OAuth 1.0 we have to use a token to authorise the REST calls. The developer API key and token will have to be included in all REST calls. </p>
+
+<p>You should replace the placeholder values for :</p>
+
+<ul>
+<li>trelloKey</li>
+<li>trelloToken</li>
+<li>username</li>
+</ul>
+
+<p>To get your developer API key go to <a href="https://trello.com/app-key">https://trello.com/app-key</a>. Generate the token with the following URL pattern : <a href="https://trello.com/1/authorize?key=%7BtrelloKey%7D&amp;name=GoogleSheets&amp;expiration=never&amp;response_type=token&amp;scope=read,write">https://trello.com/1/authorize?key={trelloKey}&amp;name=GoogleSheets&amp;expiration=never&amp;response_type=token&amp;scope=read,write</a>. </p>
+
+<h2>
+<a id="global-variables" class="anchor" href="#global-variables" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Global variables</h2>
+
+<ul>
+<li>trelloKey : Developer API key</li>
+<li>trelloToken : Generated token</li>
+<li>trelloAPIEndPoint : Trello REST API base URL</li>
+<li>username : Your Trello username</li>
+<li>mainSheetName : Name of the main sheet</li>
+<li>insertCardStickers : Flag indicating wether sticker images must be inserted</li>
+<li>addBoardSheets : Flag to indicate if sheets must be created for each board (Main sheet will always be created and populated)</li>
+<li>delimiter : delimeter to split card labels and sticker string</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/SamuelOC">SamuelOC</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
