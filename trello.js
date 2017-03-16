@@ -137,11 +137,14 @@ function addBoardSheet(board, boardLists) {
   var boardSheet = getNewSheet(board.name);
   var headerNames = [];
   var subHeaders = [];
-  // Set sheet size apropriate to the number of lists 
-  boardSheet.insertColumns(1, (count*2)-26);
   // Set sheet name and URL header values
   boardSheet.getRange(1, 1, 1, 1).setValues([[board.name]]);
   boardSheet.getRange(1, 3, 1, 1).setValues([[board.url]]);
+  if(!count)
+    return boardSheet;
+  // Set sheet size apropriate to the number of lists 
+  if(count>13)
+    boardSheet.insertColumns(1, (count*2)-26);
   // Add column headers for all board lists
   for (var i = 0; i < count; i++) {
     headerNames[i * 2] = boardLists[i].name;
